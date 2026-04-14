@@ -1,0 +1,224 @@
+---
+import noImgPlchldr from "../assets/noImg.svg";
+import type { slideButtons } from "../data/slideDat";
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  subcat?: string;
+  images: {
+    src: string;
+    alt?: string;
+    pos?: string;
+    style?: string; //lazy fuck solution
+  };
+  button?: slideButtons[];
+  isDisabled?: boolean;
+}
+const { id, title, description, images, subcat, button } = Astro.props;
+const btnKey = id;
+---
+
+<li class="glide__slide">
+  <div class="slideImgFade"></div>
+  <div
+    class="slideImg"
+    style={`background: url('${images.src}') ${images.pos || "center"}/cover no-repeat;`}
+  >
+  </div>
+  <div class="slideBox">
+    <div class="slideStringBox">
+      {subcat && <div class="subcat">{subcat}</div>}
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+    <div class="buttonBox">
+      {
+        button?.map((btns, i) => (
+          <a
+            class={"slideBtn " + (btns.styleInvert ? "invert" : "")}
+            id={`${btnKey}_btn${i + 1}`}
+          >
+            {btns.text}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</li>
+
+<style lang="scss">
+  @use "../styles/mixins" as *;
+
+  .glide__slide {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 2rem;
+    overflow: hidden;
+
+    height: 100vh;
+    &.glide__slide--active {
+      .slideImg,
+      .slideImgFade {
+        opacity: 1;
+      }
+      .slideStringBox {
+        transform: translate(0, 0);
+        opacity: 1;
+        & h1,
+        & p,
+        & .subcat {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
+    }
+
+    @include breakpoint(mobile, tiny) {
+      font-size: 1.5rem;
+      justify-content: center;  
+    }
+  }
+
+  .slideBox {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    @include breakpoint(tablet, mobile, tiny) {
+      padding: 2em 0em;
+    }
+  }
+
+  .slideStringBox {
+    color: var(--base);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translate(0, 2em);
+    opacity: 0;
+    transition:
+      transform 0.3s var(--sleek),
+      opacity 0.5s var(--sleek);
+
+    max-width: 50vw;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    //padding-bottom: 0.5em;
+    font-size: 2.5rem;
+
+    background: rgba(var(--baseRGB), 0.1);
+    backdrop-filter: blur(30px) brightness(1.1);
+    border-radius: var(--rounding);
+    border: 2px solid rgba(var(--baseRGB), 0.2);
+    box-shadow: 0 0 20px rgba(var(--foreRGB), 0.1);
+
+    & .subcat,
+    & h1,
+    & p {
+      transform: translate(-2em, 0);
+      opacity: 0;
+      transition:
+        transform 0.3s var(--sleek),
+        opacity 0.5s var(--sleek);
+    }
+
+    & .subcat {
+      font-family: var(--content);
+      font-size: 1rem;
+      text-transform: uppercase;
+      background: var(--base);
+      color: var(--accent);
+      border-radius: var(--rounding);
+      margin-bottom: 0.5em;
+      padding: 0.2em 0.5em;
+      font-weight: bold;
+    }
+    & h1 {
+      margin: 0;
+      font-family: var(--display);
+      // text-shadow: 0 0 20px rgba(var(--baseRGB), 0.5);
+      transition-delay: 50ms;
+    }
+    & p {
+      font-family: var(--content);
+      font-size: 1.5rem;
+      margin-top: 0.5em;
+      transition-delay: 100ms;
+    }
+
+    @include breakpoint(tablet) {
+      font-size: 1.5rem;
+      max-width: 70vw;
+    }
+    @include breakpoint(mobile, tiny) {
+      margin-left: 0;
+      padding: 1.5em;
+      text-align: center;
+      align-items: center;
+      font-size: 1rem;
+      max-width: 90vw;
+    }
+  }
+
+  .buttonBox {
+    display: flex;
+    padding-left: 2.5em;
+    gap: 0.2em;
+    & .slideBtn {
+      background: var(--base);
+      color: var(--accent);
+      border: none;
+      padding: 0.5em 1em;
+      font-size: 2rem;
+      border-radius: var(--rounding);
+      cursor: pointer;
+      font-family: var(--content);
+      transition:
+        background 0.2s var(--sleek),
+        color 0.2s var(--sleek);
+
+      &:hover {
+        background: var(--base);
+        color: var(--baseHover);
+      }
+    }
+    @include breakpoint(tablet) {
+      padding-left: 1em;
+      gap: 0.5em;
+    }
+    @include breakpoint(mobile, tiny) {
+      justify-content: center;
+      margin-bottom: 30%;
+      padding-left: 0;
+      gap: 0.2em;
+    }
+
+  }
+
+  .slideImg {
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(1.1);
+    transition: 1s var(--sleek) opacity;
+    opacity: 0;
+  }
+
+  .slideImgFade {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(40deg, var(--accent), transparent 60%);
+    opacity: 0;
+    transition: 1s var(--sleek) opacity;
+    @include breakpoint(tablet, mobile, tiny) {
+      background: linear-gradient(0deg, rgba(var(--accentRGB), 0.8) 20%, transparent 50%);
+    }
+  }
+</style>

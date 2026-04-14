@@ -1,0 +1,98 @@
+.herologo {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    top: 5rem;
+    padding-left: 10%;
+    z-index: 1;
+
+    & img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+.heroCarousel {
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    background: var(--accent);
+    margin-bottom: 5rem;
+}
+
+.heroSlideBullets {
+    --bulletSize: 24px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2em 0;
+    bottom: 0;
+    z-index: 1;
+    gap: 0.5em;
+
+    &>* {
+        border: none;
+    }
+
+    &:hover {
+
+        .glide__bullet,
+        .glide__bullet--active {
+            height: calc(var(--bulletSize) * 1.2);
+            width: calc(var(--bulletSize) * 3);
+            transition:
+                background 0.2s var(--sleek),
+                opacity 0.2s var(--sleek),
+                width 0.2s var(--sleek),
+                height 0.2s var(--sleek);
+            transition-delay: 50ms;
+        }
+
+        .glide__bullet--active {
+            opacity: 0.8 !important;
+            width: calc(var(--bulletSize)) !important;
+        }
+
+        .heroBulletIndex {
+            transition-delay: 50ms;
+            opacity: 1 !important;
+        }
+    }
+
+    & .glide__bullet {
+        cursor: pointer;
+        width: var(--bulletSize);
+        height: calc(var(--bulletSize) / 2);
+        border-radius: var(--rounding);
+        background: var(--base);
+        opacity: 0.5;
+        transition:
+            background 0.2s var(--sleek),
+            opacity 0.2s var(--sleek),
+            width 0.2s var(--sleek),
+            height 0.2s var(--sleek);
+
+        & .heroBulletIndex {
+            font-family: var(--content);
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: bold;
+            opacity: 0;
+        }
+
+        &.glide__bullet--active {
+            width: calc(var(--bulletSize) * 2);
+            background: var(--base);
+            opacity: 1;
+        }
+
+        &:hover:not(.glide__bullet--active) {
+            width: calc(var(--bulletSize) * 3);
+            background: var(--base);
+            opacity: 1;
+        }
+    }
+}
