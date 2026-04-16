@@ -1,0 +1,196 @@
+@use "../mixins" as *;
+
+.mbox.tb {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10%;
+    margin: 10rem 0;
+    margin-bottom: 1rem;
+
+    .tb_ib {
+        flex-shrink: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+
+        @include breakpoint(square, mobile, tiny) {
+            width: 100%;
+        }
+    }
+
+    .subPseudoImgBox {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        display: grid;
+        place-items: center;
+        filter: blur(120px);
+
+        background: linear-gradient(135deg, #ffffc4 0.000%, #ff6164 50.000%, #b00012 100.000%);
+        opacity: 0.5;
+        border-radius: var(--rounding);
+    }
+
+    .pseudoImgBox,
+    .graphic {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.pseudoImgBox {
+            background: rgba(var(--baseRGB), 0.1);
+            backdrop-filter: blur(30px) brightness(1.1);
+            border-radius: var(--rounding);
+            border: 2px solid rgba(var(--baseRGB), 0.5);
+            box-shadow: 0 0 20px rgba(var(--foreRGB), 0.1);
+        }
+
+        @include breakpoint(tablet) {
+            width: 100%;
+        }
+    }
+
+    .graphic {
+        &.tb1 {
+            width: 390px;
+            position: absolute;
+            background: url(/imgs/webp/moneybag1.webp) center/contain no-repeat;
+            transform: translateX(30px);
+        }
+
+        &.tb2 {
+            position: absolute;
+            background: url(/imgs/webp/jar.webp) center/contain no-repeat;
+            width: 200px;
+            transform: translate(-120px, 75px);
+        }
+
+        &.tb3 {
+            position: absolute;
+            background: url(/imgs/webp/charts.webp) center/contain no-repeat;
+            width: 150px;
+            transform: translate(-60px, 130px);
+        }
+    }
+
+    .product_label {
+        font-family: var(--content);
+        font-size: 1rem;
+        text-transform: uppercase;
+        background: var(--accent);
+        color: var(--base);
+        border-radius: var(--rounding);
+        margin-bottom: 0.5em;
+        padding: 0.2em 0.5em;
+        font-weight: bold;
+    }
+
+    // .promo_heading {
+    //     font-size: 4rem;
+    //     font-weight: 900;
+    //     margin-top: 0;
+    // }
+
+    // .promo_p {
+    //     font-size: 1.7rem;
+    //     font-family: var(--content);
+    // }
+}
+
+.mbox.tb2 {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: flex-start;
+    padding-left: 10%;
+    margin-bottom: 5rem;
+    gap: 1rem;
+    width: 50%;
+
+    &:hover .tbBox:not(:hover) {
+        opacity: .5;
+        transform: scale(.9);
+    }
+
+
+    @include breakpoint(tablet) {
+        padding-left: 5%;
+    }
+
+    @include breakpoint(square, mobile, tiny) {
+        width: 60%;
+        padding: 0;
+        margin-top: 3rem;
+        align-self: inherit;
+    }
+
+    @include breakpoint(mobile, tiny) {
+        width: 100%;
+    }
+
+    .tbBox {
+        width: 100%;
+        background: var(--accent);
+        padding: 2rem;
+        border-radius: var(--rounding);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 0 20px rgba(var(--foreRGB), 0.3);
+        transition: transform .3s var(--sleek), opacity .3s var(--sleek);
+
+        &>div {
+            text-align: center;
+            font-family: var(--display);
+            transition: transform .2s var(--sleek);
+        }
+
+        &:hover {
+            transform: scale(1.1);
+
+            .tbAmount {
+                transform: translateY(-10px);
+            }
+
+            .tbInterest {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .tbAmount {
+        width: 100%;
+        font-size: 2rem;
+        font-weight: bold;
+        background: var(--base);
+        border-radius: var(--rounding);
+        padding: .5em;
+        box-shadow: 0 0 12px rgba(var(--foreRGB), 0.3);
+
+        & .tbSymb {
+            color: var(--accent);
+        }
+    }
+
+    .tbInterest {
+        font-size: 4.5rem;
+        font-weight: 1000;
+        color: var(--base);
+        display: flex;
+        align-items: flex-start;
+
+        & .pa {
+            margin-top: 1em;
+            font-size: 1rem;
+            padding: .2rem .5rem;
+            font-weight: 500;
+            color: var(--fore);
+            background: var(--base);
+            border-radius: var(--rounding);
+        }
+    }
+}

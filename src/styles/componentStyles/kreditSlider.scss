@@ -1,3 +1,6 @@
+.mbox#flowchart_kredit {
+    margin-bottom: 10rem;
+}
 .kredit_stringbox {
     margin-bottom: 1rem;
     background: var(--accent);
@@ -22,6 +25,10 @@
     & .glide__track,
     .glide__slides {
         height: 100%;
+    }
+
+    & .glide__track {
+        border-radius: var(--rounding);
     }
 }
 

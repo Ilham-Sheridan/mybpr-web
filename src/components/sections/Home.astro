@@ -31,7 +31,7 @@ import GhostSpacer from "./GhostSpacer.astro";
   </div>
   <div class="glide__bullets heroSlideBullets" data-glide-el="controls[nav]">
     {
-      Object.entries(slides_dat).map(([key, slide], i) => (
+      Object.entries(slides_dat).map(([key], i) => (
         <button class="glide__bullet" data-glide-dir={`=${i}`}>
           <span class="heroBulletIndex">{i + 1}</span>
         </button>
@@ -41,9 +41,14 @@ import GhostSpacer from "./GhostSpacer.astro";
 </div>
 <div class="centering">
   <div class="main">
-    <div class="mbox" id="kredit_promo">
-      <div class="kp psuedoImgBox">
-        <div class="kp realImgBox"></div>
+    <hr class="divider" />
+    <!-- ############################################################### -->
+    <div class="mbox kp1" id="kredit_promo">
+      <div class="kp_ib">
+        <div class="kp subPseudoImgBox"></div>
+        <div class="kp pseudoImgBox"></div>
+        <div class="kp kreditBg"></div>
+        <div class="kp kreditBanner"></div>
       </div>
       <div class="kp promo_textbox">
         <span class="kp product_label">Kredit</span>
@@ -56,6 +61,48 @@ import GhostSpacer from "./GhostSpacer.astro";
         </p>
       </div>
     </div>
+    <!-- ############################################################### -->
+    <div class="mbox kp2" id="kredit_promo">
+      <div class="pseudoGrid">
+        <div class="bigTextBox">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum
+          exercitationem eaque iure in excepturi, commodi aliquam voluptas ab
+          nulla, aliquid, error tenetur. Itaque distinctio ex dolorem tempora.
+          Autem ipsam dolorum possimus nam optio.
+        </div>
+        <div class="kp_ib">
+          <div class="kp subPseudoImgBox"></div>
+          <div class="kp pseudoImgBox"></div>
+          <div class="kp _3t5_bolt"></div>
+          <div class="kp _3t5_clock"></div>
+          <div class="kp _3t5_textbox">
+            <span class="_3t5-t">Proses</span>
+            <span class="_3t5-t">3-5</span>
+            <span class="_3t5-t">Hari Kerja<span class="ast">*</span></span>
+          </div>
+          <span class="astans">*Setelah data lengkap</span>
+        </div>
+      </div>
+      <div class="pseudoGrid">
+        <div class="kp_ib">
+          <div class="kp b2 subPseudoImgBox"></div>
+          <div class="kp b2 pseudoImgBox"></div>
+          <div class="kp b2 _3m"></div>
+          <div class="kp b2 plafond_textbox">
+            <span class="plafond-t">Plafond</span>
+            <span class="plafond-t">sampai</span>
+            <span class="plafond-t">dengan</span>
+          </div>
+        </div>
+        <div class="bigTextBox">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum
+          exercitationem eaque iure in excepturi, commodi aliquam voluptas ab
+          nulla, aliquid, error tenetur. Itaque distinctio ex dolorem tempora.
+          Autem ipsam dolorum possimus nam optio.
+        </div>
+      </div>
+    </div>
+    <!-- ############################################################### -->
     <div class="mbox" id="flowchart_kredit">
       <div class="kredit_stringbox">Alur Pengajuan Kredit</div>
       <div class="kredit_glide">
@@ -101,7 +148,7 @@ import GhostSpacer from "./GhostSpacer.astro";
               <div class="ffpImageBox">
                 <div
                   class="ffpImg"
-                  style="background: url(/imgs/webview/ffp3.png) center/cover no-repeat;"
+                  style="background: url(/imgs/webp/ffp3.webp) center/cover no-repeat;"
                 >
                 </div>
                 <span class="ffpIco material-symbols-rounded">check_circle</span
@@ -168,7 +215,61 @@ import GhostSpacer from "./GhostSpacer.astro";
         </div>
       </div>
     </div>
-    <div class="mbox" id="tabungan_promo"></div>
+    <hr class="divider" />
+    <!-- ############################################################### -->
+    <div class="mbox tb" id="tabungan_promo">
+      <div class="tb_ib">
+        <div class="subPseudoImgBox"></div>
+        <div class="pseudoImgBox"></div>
+        <div class="graphic tb1"></div>
+        <div class="graphic tb2"></div>
+        <div class="graphic tb3"></div>
+      </div>
+      <div class="promo_textbox">
+        <span class="product_label">Tabungan</span>
+        <h1 class="promo_heading">Buka Tabungan</h1>
+        <p class="promo_p">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio ex
+          provident eaque, necessitatibus asperiores, modi iste rem quaerat
+          expedita, repellendus ipsa inventore autem ad deserunt consequatur eos
+          qui et delectus assumenda porro esse!
+        </p>
+      </div>
+    </div>
+    <div class="mbox tb2">
+      <div class="tbBox">
+        <div class="tbAmount"><span class="tbSymb">≤</span>Rp. 100 Juta</div>
+        <div class="tbInterest">3,00%<span class="pa">p.a.</span></div>
+      </div>
+      <div class="tbBox">
+        <div class="tbAmount"><span class="tbSymb">≥</span>Rp. 100 Juta</div>
+        <div class="tbInterest">3,50%<span class="pa">p.a.</span></div>
+      </div>
+    </div>
+    <hr class="divider" />
+    <!-- ############################################################### -->
+    <div class="mbox dp" id="deposito_promo">
+      <div class="dp_ib">
+        <div class="subPseudoImgBox"></div>
+        <div class="pseudoImgBox"></div>
+        <div class="graphic dp1"></div>
+        <div class="graphic dp3"></div>
+        <div class="graphic dp2"></div>
+        <div class="graphic dp4"></div>
+      </div>
+      <div class="promo_textbox">
+        <span class="product_label">Deposito</span>
+        <h1 class="promo_heading">Mulai Deposito</h1>
+        <p class="promo_p">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio ex
+          provident eaque, necessitatibus asperiores, modi iste rem quaerat
+          expedita, repellendus ipsa inventore autem ad deserunt consequatur eos
+          qui et delectus assumenda porro esse!
+        </p>
+      </div>
+    </div>
+    <hr class="divider" />
+    <!-- ############################################################### -->
     <GhostSpacer />
   </div>
 </div>
@@ -215,8 +316,8 @@ import GhostSpacer from "./GhostSpacer.astro";
       animationTimingFunc: "cubic-bezier(.55,-0.01,0,1)",
       gap: 20,
       breakpoints: {
-        768: { perView: 1 },
-        1024: { perView: 2 },
+        767: { perView: 1 },
+        1586: { perView: 2 },
       },
     });
 
@@ -233,8 +334,14 @@ import GhostSpacer from "./GhostSpacer.astro";
 <style lang="scss">
   @use "../../styles/mixins" as *;
   @use "../../styles/componentStyles/heroCarousel.scss";
-  @use "../../styles/componentStyles/kreditSlider.scss";
   @use "../../styles/componentStyles/tabunganGrid.scss";
+  @use "../../styles/componentStyles/depositoGrid.scss";
+  @use "../../styles/componentStyles/kreditGrid.scss";
+  @use "../../styles/componentStyles/kreditSlider.scss";
+
+  // * {
+  //   border: 1px solid red;
+  // }
 
   .main {
     position: relative;
@@ -251,8 +358,13 @@ import GhostSpacer from "./GhostSpacer.astro";
     align-items: center;
     width: 100vw;
     max-width: 80%;
+    font-family: var(--content);
     @include breakpoint(tablet) {
       max-width: 90%;
+    }
+    @include breakpoint(square, mobile, tiny) {
+      flex-direction: column !important;
+      padding: 2em 0;
     }
   }
   .centering {
@@ -267,118 +379,14 @@ import GhostSpacer from "./GhostSpacer.astro";
       padding: 2em;
     }
   }
-  // #pageLabel {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   padding: 2rem 0;
-  // }
-  // .label {
-  //   position: relative;
-  //   display: flex;
-  //   justify-content: center;
-  //   background: var(--fore);
-  //   font-size: 2rem;
-  //   font-family: var(--display);
-  //   font-weight: 700;
-  //   padding: 0.2em 0.5em;
-  //   color: var(--base);
-  //   border-radius: 15px;
-  //   min-height: 51.78px;
-  //   min-width: 4rem;
-  //   transition:
-  //     background 0.2s var(--sleek),
-  //     color 0.2s var(--sleek);
-  // }
 
-  // .labelLoadCont {
-  //   position: absolute;
-  //   display: flex;
-  // }
-  // .labelLoad {
-  //   animation: shakeVert 1s infinite;
-  //   &:nth-child(1) {
-  //     animation-delay: 0.2s;
-  //   }
-  //   &:nth-child(2) {
-  //     animation-delay: 0.1s;
-  //   }
-  // }
-  // @keyframes dotBounce {
-  //   0%,
-  //   100% {
-  //     transform: translateY(0);
-  //   }
-  //   50% {
-  //     transform: translateY(-10px);
-  //   }
-  // }
-  // .labelSecondary {
-  //   font-family: var(--doto);
-  //   font-size: 1rem;
-  //   margin-top: 0.5em;
-  //   color: var(--accent);
-  //   font-weight: bold;
-  //   transition: color 0.2s var(--sleek);
-  // }
-  // .menuMessageBox {
-  //   position: relative;
-  //   color: var(--fore);
-  //   padding: 0.5em 0.8em;
-  //   width: 100%;
-  //   max-width: 100%;
-  //   margin-top: 2em;
-  //   font-size: 1.3rem;
-  //   font-family: var(--content);
-  //   border-radius: 20px;
-  //   display: flex;
-  //   align-items: center;
-  //   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.205);
-  //   @include breakpoint(tiny, mobile) {
-  //     width: 95%;
-  //   }
-  //   @include breakpoint(tablet) {
-  //     width: 100%;
-  //   }
-
-  //   &.slotStat {
-  //     display: none;
-  //   }
-  //   &.mini {
-  //     font-size: 1rem;
-  //     color: var(--fore);
-  //     margin-top: 1em;
-  //     width: 100%;
-  //     max-width: 100%;
-  //     padding: 0.5em 1em;
-  //     border: 2px solid var(--fore);
-  //     justify-content: center;
-  //     box-shadow: none;
-  //     & .b7 {
-  //       margin-left: 0.2rem;
-  //     }
-  //   }
-  // }
-  // .mmMsgBox {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: flex-start;
-  // }
-  // .mmIconBox {
-  //   --size: 70px;
-  //   width: calc(var(--size) + (var(--size) / 4));
-  //   min-width: calc(var(--size) + (var(--size) / 4));
-  //   height: var(--size);
-  //   margin-right: 1em;
-  //   border-right: 2px solid var(--fore);
-  //   background-position: left !important;
-  //   background-repeat: no-repeat !important;
-  // }
-  // .mmMsgTitle {
-  //   font-weight: 700;
-  //   font-size: 1.5rem;
-  // }
-  // .mmMsg {
-  //   padding-top: 0.1em;
-  // }
+  .promo_heading {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-top: 0;
+  }
+  .promo_p {
+    font-size: 1.7rem;
+    font-family: var(--content);
+  }
 </style>

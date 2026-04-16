@@ -1,0 +1,307 @@
+@use "../mixins" as *;
+
+.mbox.kp1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+    margin: 10rem 0;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile, tiny) {
+        flex-direction: column;
+        padding: 2em 0;
+    }
+
+    .kp_ib {
+        flex-shrink: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+
+        @include breakpoint(mobile, tiny) {
+            width: 100%;
+        }
+    }
+
+    .subPseudoImgBox {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        display: grid;
+        place-items: center;
+        filter: blur(120px);
+
+        background: linear-gradient(270deg,
+                #b25700 0%,
+                #c26e00 20%,
+                #da8e04 40%,
+                #f3b122 60%,
+                #ffcd51 80%,
+                #ffdd91 100%);
+        opacity: 0.5;
+        border-radius: var(--rounding);
+    }
+
+    .pseudoImgBox,
+    .kreditBanner {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.pseudoImgBox {
+            background: rgba(var(--baseRGB), 0.1);
+            backdrop-filter: blur(30px) brightness(1.1);
+            border-radius: var(--rounding);
+            border: 2px solid rgba(var(--baseRGB), 0.5);
+            box-shadow: 0 0 20px rgba(var(--foreRGB), 0.1);
+        }
+
+        &.kreditBanner {
+            width: 150%;
+            position: absolute;
+            background: url(/imgs/webp/Kredit.webp) center/contain no-repeat;
+
+            @include breakpoint(tablet) {
+                width: 300%;
+            }
+            @include breakpoint(mobile) {
+                width: 130%;
+            }
+            @include breakpoint(tiny) {
+                width: 120%;
+            }
+        }
+
+        @include breakpoint(tablet) {
+            width: 100%;
+        }
+    }
+
+    .kreditBg {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        border-radius: var(--rounding);
+        position: absolute;
+        opacity: 0.5;
+        background: url(/imgs/webp/express.webp) center/cover no-repeat;
+
+        @include breakpoint(tablet) {
+            width: 100%;
+        }
+    }
+
+    .product_label {
+        font-family: var(--content);
+        font-size: 1rem;
+        text-transform: uppercase;
+        background: var(--accent);
+        color: var(--base);
+        border-radius: var(--rounding);
+        margin-bottom: 0.5em;
+        padding: 0.2em 0.5em;
+        font-weight: bold;
+    }
+
+    .promo_heading {
+        //font-size: 4rem;
+        font-weight: 900;
+        margin-top: 0;
+    }
+
+    // .promo_p {
+    //     font-size: 1.7rem;
+    //     font-family: var(--content);
+    // }
+}
+
+//##############################################################
+.mbox.kp2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    margin: 10rem 0;
+    margin-top: 2rem;
+
+    .bigTextBox {
+        font-size: 2rem;
+
+        @include breakpoint(tablet, square) {
+            width: 80%;
+        }
+
+        @include breakpoint(mobile, tiny)
+    }
+
+    .pseudoGrid {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 5rem;
+
+        @include breakpoint(tablet, square) {
+            flex-direction: column;
+            padding: 2em 0;
+        }
+
+        @include breakpoint(mobile, tiny) {
+            flex-direction: column;
+            padding: 1em;
+        }
+
+        @include breakpoint(tablet, square, mobile, tiny) {
+            &:nth-of-type(1) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    .kp_ib {
+        flex-shrink: 0;
+        margin: 5em 0;
+        position: relative;
+        height: 350px;
+        width: 50%;
+        display: flex;
+
+        @include breakpoint(tablet, square) {
+            width: 80%;
+        }
+
+        @include breakpoint(mobile, tiny) {
+            width: 100%;
+        }
+
+        & .astans {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            transform: translateY(2rem);
+            font-family: var(--content);
+            font-weight: 500;
+            color: var(--accent);
+        }
+    }
+
+    .subPseudoImgBox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        //filter: blur(120px);
+
+        background: linear-gradient(167deg,
+                #b25700 0%,
+                #c26e00 20%,
+                #ffdfa3 30%,
+                #f3b122 60%,
+                #ffcd51 80%,
+                #ffdd91 100%);
+        border-radius: var(--rounding);
+        box-shadow: 0 0 40px rgba(var(--foreRGB), 0.3);
+
+        &:not(.b2)::after {
+            //holy unreadable
+            content: "";
+            width: 94%;
+            height: 90%;
+            background: var(--base);
+            border-radius: calc(var(--rounding) / 1.2);
+            box-shadow: inset 0 0 40px rgba(var(--foreRGB), 0.3);
+        }
+
+        &.b2 {
+            background: var(--accent);
+        }
+    }
+
+    ._3t5_bolt,
+    ._3t5_clock {
+        width: 300px;
+        height: 500px;
+        position: absolute;
+
+        &._3t5_bolt {
+            background: url(/imgs/webp/sheared_bolt.webp) center/contain no-repeat;
+            right: 0;
+            transform: translateY(-5rem);
+        }
+
+        &._3t5_clock {
+            width: 200px;
+            background: url(/imgs/webp/stopwatche.webp) center/contain no-repeat;
+            right: 0;
+            transform: translate(0, 2rem);
+        }
+    }
+
+    ._3t5_textbox {
+        height: 100%;
+        padding: 2rem 4rem;
+        position: absolute;
+        font-size: 3.5em;
+        font-weight: 800;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--accent);
+        text-shadow: 0 0 20px rgba(var(--baseRGB), 0.8);
+
+        .ast {
+            font-size: 1em;
+        }
+
+        & :nth-child(1) {
+            margin-bottom: -1rem;
+        }
+
+        & :nth-child(2) {
+            font-size: 4em;
+            margin: -4rem 0;
+            font-weight: 1000;
+            font-family: var(--text);
+        }
+    }
+
+    .b2 {
+        &._3m {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            background: url(/imgs/webp/3M.webp) center/contain no-repeat;
+            right: 0;
+            transform: translate(1rem, 0);
+        }
+
+        &.plafond_textbox {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            font-size: 2.5rem;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            font-family: var(--text);
+            color: var(--base);
+
+            & :nth-child(1) {
+                font-size: 4.5rem;
+                font-weight: 1000;
+                margin-bottom: -1rem;
+            }
+
+            & :nth-child(2) {
+                margin-bottom: -1rem;
+            }
+        }
+    }
+}

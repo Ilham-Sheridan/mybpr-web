@@ -1,0 +1,110 @@
+@use "../mixins" as *;
+
+.mbox.dp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+    margin: 10rem 0;
+    margin-bottom: 5rem;
+
+
+
+    .dp_ib {
+        flex-shrink: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+
+        @include breakpoint(square, mobile, tiny) {
+            width: 100%;
+        }
+    }
+
+    .subPseudoImgBox {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        display: grid;
+        place-items: center;
+        filter: blur(120px);
+        background: linear-gradient(225deg, #f6c95a 0.000%, #f4cd80 16.667%, #f7cd30 33.333%, #fcc819 50.000%, #ffbf6e 66.667%, #ffb374 83.333%, #fca41e 100.000%);
+        opacity: 0.5;
+        border-radius: var(--rounding);
+    }
+
+    .pseudoImgBox,
+    .graphic {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.pseudoImgBox {
+            background: rgba(var(--baseRGB), 0.1);
+            backdrop-filter: blur(30px) brightness(1.1);
+            border-radius: var(--rounding);
+            border: 2px solid rgba(var(--baseRGB), 0.5);
+            box-shadow: 0 0 20px rgba(var(--foreRGB), 0.1);
+        }
+
+        @include breakpoint(tablet) {
+            width: 100%;
+        }
+    }
+
+    .graphic {
+        &.dp1 {
+            width: 390px;
+            position: absolute;
+            background: url(/imgs/webp/safe.webp) center/contain no-repeat;
+            transform: translateY(-30px);
+        }
+
+        &.dp2 {
+            position: absolute;
+            background: url(/imgs/webp/moneybag2.webp) center/contain no-repeat;
+            width: 200px;
+            transform: translate(-200px, 100px);
+        }
+
+        &.dp3 {
+            position: absolute;
+            background: url(/imgs/webp/moneybag1.webp) center/contain no-repeat;
+            width: 190px;
+            transform: translate(-140px, 96px);
+        }
+        &.dp4 {
+            position: absolute;
+            background: url(/imgs/webp/calendar.webp) center/contain no-repeat;
+            width: 240px;
+            transform: translate(170px, 150px);
+        }
+    }
+
+    .product_label {
+        font-family: var(--content);
+        font-size: 1rem;
+        text-transform: uppercase;
+        background: var(--accent);
+        color: var(--base);
+        border-radius: var(--rounding);
+        margin-bottom: 0.5em;
+        padding: 0.2em 0.5em;
+        font-weight: bold;
+    }
+
+    // .promo_heading {
+    //     font-size: 4rem;
+    //     font-weight: 900;
+    //     margin-top: 0;
+    // }
+
+    // .promo_p {
+    //     font-size: 1.7rem;
+    //     font-family: var(--content);
+    // }
+}

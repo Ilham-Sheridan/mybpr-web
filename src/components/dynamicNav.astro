@@ -1,27 +1,3 @@
-<div class="chptOverlay">
-  <div class="creationdialog">
-    <div class="exit">
-      <div class="xcont">
-        <div class="x"></div>
-      </div>
-    </div>
-    <div class="cbuttongroup">
-      <a href="#gall">
-        <div class="illus cbutton block sGall">GALLERY</div>
-      </a>
-      <a href="#comm">
-        <div class="anim cbutton block sComm">COMMISSION</div>
-      </a>
-      <a href="#trivia">
-        <div class="sket cbutton block sTriv">TRIVIA</div>
-      </a>
-      <a href="#extra">
-        <div class="extra cbutton block sExtr">EXTRA</div>
-      </a>
-    </div>
-  </div>
-</div>
-
 <nav class="dynamicnav navDormant">
   <a id="nlogo" href="/">
     <svg
@@ -181,20 +157,18 @@
     </svg>
   </a>
   <div class="buttongroup">
-    <a href="#about" class="nbutton about">
-      Hello.
-      <span class="strikethrough sAbout"></span>
+    <a href="#beranda" class="nbutton beranda">
+      Home
+      <span class="strikethrough sBeranda"></span>
     </a>
     <div class="nbutton openChapterList">
-      [:::]
+      ?
       <span class="strikethrough s2"></span>
     </div>
   </div>
 </nav>
 
 <script>
-  import { devConsole } from "./utils/devConsole";
-
   let isGalleryPage = false;
 
   function navLogic() {
@@ -217,38 +191,6 @@
       navDisplayMode();
     });
     navDisplayMode();
-
-    // chapter dialog logic
-    const aboutButton = document.querySelector(".nbutton.about") as HTMLElement;
-    const chapterListButton = document.querySelector(
-      ".nbutton.openChapterList",
-    ) as HTMLElement;
-
-    const chptOverlay = document.querySelector(".chptOverlay") as HTMLElement;
-    const creationDialog = document.querySelector(".creationdialog");
-    const xconts = document.querySelectorAll(".xcont, .cbutton");
-    const X = document.querySelector(".xcont") as HTMLElement | null;
-
-    if (chapterListButton && creationDialog && !isGalleryPage) {
-      devConsole("Creation dialog initialized");
-      chapterListButton.addEventListener("click", () => {
-        chptOverlay.classList.add("active");
-        creationDialog.classList.add("cdactive");
-        setTimeout(() => {
-          X?.classList.add("xActive");
-        }, 200);
-      });
-      xconts.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          creationDialog.classList.remove("cdactive");
-          chptOverlay.classList.remove("active");
-          X?.classList.remove("xActive");
-        });
-      });
-    } else {
-      aboutButton.style.display = "none";
-      chapterListButton.style.display = "none";
-    }
 
     // Section highlight logic
     function chapter() {
@@ -392,8 +334,8 @@
       background 0.1s,
       color 0.2s;
     font-weight: 500;
-    border-radius: 0 5px 0 0;
-    padding: 0.3rem;
+    border-radius: var(--rounding);
+    padding: 0.3rem .5rem;
     cursor: pointer;
 
     &:has(.strikethrough.navbHighlight) {

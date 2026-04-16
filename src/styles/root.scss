@@ -26,6 +26,10 @@ body {
   box-sizing: border-box;
 }
 
+// * {
+//   border: 1px solid blue;
+// }
+
 /* ############################### */
 
 body {
@@ -60,6 +64,7 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"');
+
 :root {
   --base: #ffffff;
   --baseRGB: 255, 255, 255;
@@ -88,7 +93,7 @@ body {
 
   --display: "Montserrat";
   --content: "Roboto";
-  --text: "Montserrat";
+  --text: "Open Sans";
   --easyRead: "Lexend";
   --contentSecondary: "Ubuntu Sans Mono";
   --sleek: cubic-bezier(0.03, 0.77, 0.34, 1);
@@ -222,6 +227,11 @@ hr {
   }
 }
 
+.divider {
+  width: 90%;
+  border: 1px dashed var(--accent);
+}
+
 .endOfPage {
   display: flex;
   justify-content: center;
@@ -280,25 +290,25 @@ hr {
   font-size: 0.8rem;
 }
 
-.socicon {
-  --size: 40px;
-  width: var(--size);
-  height: var(--size);
-  margin: 0 0.2em;
-  font-size: 32px;
-  background: var(--fore);
-  mask-position: center;
-  mask-size: contain;
-  mask-repeat: no-repeat;
+// .socicon {
+//   --size: 40px;
+//   width: var(--size);
+//   height: var(--size);
+//   margin: 0 0.2em;
+//   font-size: 32px;
+//   background: var(--fore);
+//   mask-position: center;
+//   mask-size: contain;
+//   mask-repeat: no-repeat;
 
-  &.twt {
-    mask-image: url('/socials/twt.svg');
-  }
+//   &.twt {
+//     mask-image: url('/socials/twt.svg');
+//   }
 
-  &.bsky {
-    mask-image: url('/socials/bsky.svg');
-  }
-}
+//   &.bsky {
+//     mask-image: url('/socials/bsky.svg');
+//   }
+// }
 
 .interactive {
   cursor: pointer;
