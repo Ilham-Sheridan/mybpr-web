@@ -1,4 +1,10 @@
-<nav class="dynamicnav navDormant">
+---
+interface Props {
+  stayAwake?: boolean;
+}
+const { stayAwake } = Astro.props;
+---
+<nav id="dynamicnav" class="navDormant" data-stay-awake={stayAwake}>
   <a id="nlogo" href="/">
     <svg
       id="Layer_2"
@@ -157,8 +163,12 @@
     </svg>
   </a>
   <div class="buttongroup">
-    <a href="#beranda" class="nbutton beranda">
-      Home
+    <a href="/" class="nbutton beranda">
+      Beranda
+      <span class="strikethrough sBeranda"></span>
+    </a>
+    <a href="/hubungi_kami" class="nbutton beranda">
+      Kontak
       <span class="strikethrough sBeranda"></span>
     </a>
     <div class="nbutton openChapterList">
@@ -173,11 +183,11 @@
 
   function navLogic() {
     let winH = window.innerHeight;
-    const nav = document.querySelector(".dynamicnav");
+    const nav = document.getElementById("dynamicnav");
 
     function navDisplayMode() {
       if (!nav) return;
-      if (!isGalleryPage && window.scrollY > winH / 1.2) {
+      if ((window.scrollY > winH / 3) || nav?.dataset.stayAwake == "true") {
         nav.classList.remove("navDormant");
       } else if (isGalleryPage) {
         nav.classList.remove("navDormant");
@@ -270,7 +280,7 @@
 <style lang="scss">
   @use "../styles/mixins" as *;
 
-  .dynamicnav {
+  #dynamicnav {
     width: 100vw;
     position: fixed;
     top: 0;
@@ -284,6 +294,7 @@
     user-select: none;
     transition: all 0.2s var(--sleek);
     height: var(--navHeight);
+    box-shadow: 0 0 20px rgba(var(--foreRGB), .5);
   }
 
   .navDormant {

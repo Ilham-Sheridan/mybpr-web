@@ -3,6 +3,10 @@ import "/node_modules/@glidejs/glide/dist/css/glide.core.min.css";
 import SlideGen from "../slideGen.astro";
 import { slides_dat } from "../../data/slideDat";
 import GhostSpacer from "./GhostSpacer.astro";
+import "../../styles/componentStyles/tabunganGrid.scss";
+import "../../styles/componentStyles/depositoGrid.scss";
+import "../../styles/componentStyles/kreditGrid.scss";
+import "../../styles/componentStyles/kreditSlider.scss";
 ---
 
 <!-- <div id="pageLabel">
@@ -236,6 +240,7 @@ import GhostSpacer from "./GhostSpacer.astro";
         </p>
       </div>
     </div>
+    <div class="tbTitle"><div class="tbt">Bunga Tabungan</div></div>
     <div class="mbox tb2">
       <div class="tbBox">
         <div class="tbAmount"><span class="tbSymb">≤</span>Rp. 100 Juta</div>
@@ -268,6 +273,27 @@ import GhostSpacer from "./GhostSpacer.astro";
         </p>
       </div>
     </div>
+    <div class="dpTitle">Bunga Deposito</div>
+    <div class="mbox dp2">
+      <div class="dpBox">
+        <div class="dpRow">
+          <div class="dpDuration"><span class="dpIndex">1</span>1 Bulan</div>
+          <div class="dpInterest">4,00%</div>
+        </div>
+        <div class="dpRow">
+          <div class="dpDuration"><span class="dpIndex">2</span>3 Bulan</div>
+          <div class="dpInterest">4,25%</div>
+        </div>
+        <div class="dpRow">
+          <div class="dpDuration"><span class="dpIndex">3</span>6 Bulan</div>
+          <div class="dpInterest">5,25%</div>
+        </div>
+        <div class="dpRow">
+          <div class="dpDuration"><span class="dpIndex">4</span>12 Bulan</div>
+          <div class="dpInterest">5,75%</div>
+        </div>
+      </div>
+    </div>
     <hr class="divider" />
     <!-- ############################################################### -->
     <GhostSpacer />
@@ -277,11 +303,10 @@ import GhostSpacer from "./GhostSpacer.astro";
 <script>
   import Glide from "@glidejs/glide";
   import { Breakpoints } from "@glidejs/glide/dist/glide.modular.esm";
-  document.addEventListener("DOMContentLoaded", () => initGlide(true));
-  document.addEventListener("astro:load", () => initGlide(true));
-  document.addEventListener("astro:after-swap", () => initGlide(true));
 
-  function initGlide(toggleCommand = true) {
+  function initGlide(mount = true) {
+    if (!mount) return;
+
     const heroGlide = new Glide(".heroGlide", {
       type: "carousel",
       autoplay: 5000,
@@ -321,64 +346,21 @@ import GhostSpacer from "./GhostSpacer.astro";
       },
     });
 
-    if (toggleCommand == true) {
-      heroGlide.mount();
-      kreditGlide.mount({ Breakpoints });
-    } else {
-      heroGlide.destroy();
-      kreditGlide.destroy();
-    }
+    heroGlide.mount();
+    kreditGlide.mount({ Breakpoints });
   }
+
+  document.addEventListener("astro:before-preparation", () => initGlide(false));
+  document.addEventListener("astro:page-load", () => initGlide(true));
+  // document.addEventListener("astro:after-swap", () => initGlide(true));
 </script>
 
 <style lang="scss">
   @use "../../styles/mixins" as *;
-  @use "../../styles/componentStyles/heroCarousel.scss";
-  @use "../../styles/componentStyles/tabunganGrid.scss";
-  @use "../../styles/componentStyles/depositoGrid.scss";
-  @use "../../styles/componentStyles/kreditGrid.scss";
-  @use "../../styles/componentStyles/kreditSlider.scss";
 
   // * {
   //   border: 1px solid red;
   // }
-
-  .main {
-    position: relative;
-    width: 100%;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .mbox {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    max-width: 80%;
-    font-family: var(--content);
-    @include breakpoint(tablet) {
-      max-width: 90%;
-    }
-    @include breakpoint(square, mobile, tiny) {
-      flex-direction: column !important;
-      padding: 2em 0;
-    }
-  }
-  .centering {
-    background: var(--base);
-    transition: background 0.2s var(--sleek);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    user-select: none;
-    @include breakpoint(tablet) {
-      padding: 2em;
-    }
-  }
 
   .promo_heading {
     font-size: 6rem;

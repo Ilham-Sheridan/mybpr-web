@@ -9,8 +9,9 @@ interface Props {
   title?: string;
   description?: string;
   thumb?: string;
+  navStayAwake?: boolean
 }
-const { thumb, url, title, description } = Astro.props;
+const { thumb, url, title, description, navStayAwake } = Astro.props;
 ---
 
 <!doctype html>
@@ -40,12 +41,12 @@ const { thumb, url, title, description } = Astro.props;
       content={thumb ? `${import.meta.env.SITE}${thumb}` : `${import.meta.env.SITE}/content/thumb/thumb.jpg`}
     />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check_circle,content_paste_search,handshake,publish,send_money" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=call,check_circle,content_paste_search,forward_to_inbox,handshake,publish,send_money,share_location" />
     <title>PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia</title>
     <ClientRouter />
   </head>
   <body>
-    <DynamicNav />
+    <DynamicNav stayAwake={navStayAwake}/>
     <QuirkyLoad />
 
     <div transition:animate={fade({ duration: ".5s" })}>

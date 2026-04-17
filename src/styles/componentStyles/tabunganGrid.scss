@@ -102,6 +102,28 @@
     // }
 }
 
+.tbTitle {
+    align-self: flex-start;
+    padding-left: 10%;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    width: 50%;
+
+    .tbt {
+        color: var(--accent);
+        font-family: var(--display);
+        font-weight: 1000;
+        font-size: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        border: 2px dashed var(--accent);
+        border-radius: var(--rounding);
+        padding: 1rem;
+    }
+}
+
 .mbox.tb2 {
     flex-direction: row;
     justify-content: flex-start;
