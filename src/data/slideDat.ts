@@ -26,20 +26,20 @@ export const slides_dat: SlideData[] = [
         title: "title",
         description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
         subcat: "Subcategory 1",
-        images: { src: '/imgs/1.JPG' },
+        images: { src: '/mybpr-web/imgs/1.JPG' },
     },
     {
         id: "slide2",
         title: "Elaborate title",
         description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
         subcat: "Subcategory 2",
-        images: { src: '/imgs/2.jpeg' },
+        images: { src: '/mybpr-web/imgs/2.jpeg' },
     },
     {
         id: "slide3",
         title: "Even more notoriously elaborate title",
         description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
-        images: { src: '/imgs/3.jpeg' },
+        images: { src: '/mybpr-web/imgs/3.jpeg' },
         button: [
             {
                 text: "Button 1",
@@ -58,6 +58,6 @@ export const slides_dat: SlideData[] = [
         title: "absurdly and atrociously long and elaborate title lorem ipsum dolor sit",
         description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
         subcat: "Subcategory 99",
-        images: { src: '/imgs/1.JPG' },
+        images: { src: '/mybpr-web/imgs/1.JPG' },
     },
 ];

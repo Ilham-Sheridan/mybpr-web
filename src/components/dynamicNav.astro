@@ -5,7 +5,7 @@ interface Props {
 const { stayAwake } = Astro.props;
 ---
 <nav id="dynamicnav" class="navDormant" data-stay-awake={stayAwake}>
-  <a id="nlogo" href="/">
+  <a id="nlogo" href={import.meta.env.BASE_URL}>
     <svg
       id="Layer_2"
       data-name="Layer 2"
@@ -163,11 +163,11 @@ const { stayAwake } = Astro.props;
     </svg>
   </a>
   <div class="buttongroup">
-    <a href="/" class="nbutton beranda">
+    <a href={import.meta.env.BASE_URL} class="nbutton beranda">
       Beranda
       <span class="strikethrough sBeranda"></span>
     </a>
-    <a href="/hubungi_kami" class="nbutton beranda">
+    <a href=`${import.meta.env.BASE_URL}/hubungi_kami` class="nbutton beranda">
       Kontak
       <span class="strikethrough sBeranda"></span>
     </a>
