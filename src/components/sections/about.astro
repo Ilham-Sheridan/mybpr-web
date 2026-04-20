@@ -1,0 +1,129 @@
+<div class="centering">
+  <div class="main">
+    <div class="bigText">
+      <h1 class="cntHero">Tentang Kami</h1>
+    </div>
+    <div class="cntInfo">
+      <div class="cntImg"></div>
+      <!-- ###################################################### -->
+      <div class="infoBox">
+        <!-- ###################################################### -->
+        <div class="infoRow">
+          <div class="infoStringBox">
+            <div class="isb_titleBox">
+              <div class="infoIco material-symbols-rounded">share_location</div>
+              <div class="isb_title">Alamat</div>
+            </div>
+            <div class="isb_text">
+              Jl. A. Yani Ruko Sentraniaga Kalimalang Blok A1 No. 3A-5 & Blok B2
+              No.8 Kayuringin, Bekasi Selatan, Kota Bekasi 17144
+            </div>
+          </div>
+        </div>
+        <!-- ###################################################### -->
+        <div class="infoRow">
+          <div class="infoStringBox">
+            <div class="isb_titleBox">
+              <div class="infoIco material-symbols-rounded">call</div>
+              <div class="isb_title">Telefon</div>
+            </div>
+            <div class="isb_text">
+              Jl. A. Yani Ruko Sentraniaga Kalimalang Blok A1 No. 3A-5 & Blok B2
+              No.8 Kayuringin, Bekasi Selatan, Kota Bekasi 17144
+            </div>
+          </div>
+        </div>
+        <!-- ###################################################### -->
+        <div class="infoRow">
+          <div class="infoStringBox">
+            <div class="isb_titleBox">
+              <div class="infoIco material-symbols-rounded">
+                forward_to_inbox
+              </div>
+              <div class="isb_title">Alamat</div>
+            </div>
+            <div class="isb_text">
+              Jl. A. Yani Ruko Sentraniaga Kalimalang Blok A1 No. 3A-5 & Blok B2
+              No.8 Kayuringin, Bekasi Selatan, Kota Bekasi 17144
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ###################################################### -->
+    </div>
+    <iframe class="gmapiframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5246.867008185885!2d106.98975877609705!3d-6.245843293742538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d711a4120ad%3A0x6b5430bb74b920b!2sBANK%20ASA%20(PT%20BPR%20ARTHA%20SARANA%20ABADI)!5e1!3m2!1sen!2sid!4v1776419576412!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<style lang="scss">
+  // * {
+  //   border: 1px solid red;
+  // }
+
+  .bigText {
+    margin-top: 50px;
+    font-size: 3rem;
+    font-family: var(--display);
+    font-weight: 1000;
+    color: var(--accent);
+  }
+  .cntInfo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .cntImg {
+    background: url(/imgs/webp/bekasi_barat.webp) 0 70% / cover no-repeat;
+    filter: brightness(1.5);
+    position: relative;
+    width: 50%;
+    height: 500px;
+    border-radius: var(--rounding);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .infoBox {
+    border: 2px dashed var(--accent);
+    border-radius: var(--rounding);
+    max-width: 50%;
+    padding: 2rem;
+  }
+  .infoRow {
+    display: flex;
+    align-items: flex-start;
+  }
+  .infoIco {
+    font-size: 3rem;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 800,
+      "GRAD" 0,
+      "opsz" 48;
+  }
+
+  .isb_titleBox {
+    display: flex;
+    align-items: center;
+    color: var(--accent);
+  }
+  .isb_title {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--display);
+    padding-left: 1rem;
+  }
+  .isb_text {
+    font-family: var(--text);
+    padding-left: 4rem;
+    font-size: 1.2rem;
+  }
+  .gmapiframe {
+    margin-top: 2rem;
+    width: 80%;
+    border-radius: var(--rounding);
+  }
+</style>
