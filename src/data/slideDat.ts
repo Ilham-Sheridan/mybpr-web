@@ -21,43 +21,45 @@ export interface slideButtons {
 }
 
 export const slides_dat: SlideData[] = [
+
     {
-        id: "slide1",
-        title: "title",
-        description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
-        subcat: "Subcategory 1",
-        images: { src: '/mybpr-web/imgs/1.JPG' },
+        id: "kredit",
+        title: "Butuh dana cepat?",
+        description: "Dengan Plafond hingga 3M Kredit Express, dapatkan pencairan dana hanya dalam 3-5 hari!",
+        subcat: "Kredit",
+        images: { src: '/mybpr-web/imgs/webview/pexels-jakubzerdzicki-29175271.jpg' },
     },
     {
-        id: "slide2",
-        title: "Elaborate title",
-        description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
-        subcat: "Subcategory 2",
-        images: { src: '/mybpr-web/imgs/2.jpeg' },
+        id: "tabungan",
+        title: "Mulai menabung di Mybpr",
+        description: "Bukan hanya main-main simpan saja, tapi membuat kebiasaan. Hingga pada saatnya dana dibutuhkan, Anda tetap tenang.",
+        images: { src: '/mybpr-web/imgs/webview/pexels-jan-van-der-wolf-11680885-19503589.jpg' },
+        subcat: "Tabungan",
+        // button: [
+        //     {
+        //         text: "Button 1",
+        //         styleInvert: false,
+        //         href: "#"
+        //     },
+        //     {
+        //         text: "Button 2",
+        //         styleInvert: true,
+        //         href: "#"
+        //     }
+        // ]
     },
     {
-        id: "slide3",
-        title: "Even more notoriously elaborate title",
-        description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
-        images: { src: '/mybpr-web/imgs/3.jpeg' },
-        button: [
-            {
-                text: "Button 1",
-                styleInvert: false,
-                href: "#"
-            },
-            {
-                text: "Button 2",
-                styleInvert: true,
-                href: "#"
-            }
-        ]
+        id: "tabungan",
+        title: "Sudahkah simpanan Anda dikelola secara terencana?",
+        description: "Deposito di Mybpr hadir untuk membantu Anda mengelola dana secara bijak dan terarah.",
+        subcat: "Deposito",
+        images: { src: '/mybpr-web/imgs/webview/pexels-iitsbruna-29099973.jpg' },
     },
     {
-        id: "slide4",
-        title: "absurdly and atrociously long and elaborate title lorem ipsum dolor sit",
-        description: "lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor sit amet consectetur adipiscing elit",
-        subcat: "Subcategory 99",
-        images: { src: '/mybpr-web/imgs/1.JPG' },
+        id: "slogan",
+        title: "Solusi Keuangan Anda",
+        description: "Welcome to Mybpr",
+        // subcat: "Subcategory 1",
+        images: { src: '/mybpr-web/imgs/webview/pexels-diva-34310968.jpg' },
     },
 ];

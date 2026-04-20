@@ -9,9 +9,10 @@ interface Props {
   title?: string;
   description?: string;
   thumb?: string;
-  navStayAwake?: boolean
+  navStayAwake?: boolean;
+  navFreeze?: boolean;
 }
-const { thumb, url, title, description, navStayAwake } = Astro.props;
+const { thumb, url, title, description, navStayAwake, navFreeze } = Astro.props;
 ---
 
 <!doctype html>
@@ -46,7 +47,7 @@ const { thumb, url, title, description, navStayAwake } = Astro.props;
     <ClientRouter />
   </head>
   <body>
-    <DynamicNav stayAwake={navStayAwake}/>
+    <DynamicNav stayAwake={navStayAwake} freeze={navFreeze}/>
     <QuirkyLoad />
 
     <div transition:animate={fade({ duration: ".5s" })}>
