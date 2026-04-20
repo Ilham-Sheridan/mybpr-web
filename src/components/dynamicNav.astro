@@ -416,31 +416,31 @@ const { stayAwake, freeze } = Astro.props;
   }
 
   .static {
-    background: rgba(var(--baseRGB), 0.8) !important;
+    background: rgba(var(--accentRGB), 0.7) !important;
     box-shadow: 0 0 0px rgba(var(--foreRGB), 0) !important;
 
-    .buttongroup {
-      &:hover .nbutton:not(:hover) {
-        border: 2px solid var(--accent);
-      }
-    }
+    // .buttongroup {
+    //   &:hover .nbutton:not(:hover) {
+    //     border: 2px solid var(--accent);
+    //   }
+    // }
 
-    .nbutton {
-      color: var(--accent);
+    // .nbutton {
+    //   color: var(--accent);
 
-      &:hover {
-        background: var(--accent);
-        color: var(--base);
-        font-weight: 900;
+    //   &:hover {
+    //     background: var(--accent);
+    //     color: var(--base);
+    //     font-weight: 900;
 
-        .strikethrough {
-          background-color: var(--base);
-        }
-      }
-    }
-    .nlogo {
-      fill: var(--accent);
-    }
+    //     .strikethrough {
+    //       background-color: var(--base);
+    //     }
+    //   }
+    // }
+    // .nlogo {
+    //   fill: var(--accent);
+    // }
   }
 
   .chptOverlay {

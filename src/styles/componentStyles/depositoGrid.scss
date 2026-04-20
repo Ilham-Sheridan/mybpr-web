@@ -113,16 +113,16 @@
 .dpTitle {
     font-family: var(--display);
     font-weight: 1000;
-    font-size: 2rem;
+    font-size: 3rem;
     width: 50%;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    border: 2px dashed var(--accent);
+    //border: 2px dashed var(--accent);
     border-radius: var(--rounding);
     padding: 1rem;
-    margin-bottom: 1rem;
     color: var(--accent);
+
 }
 
 .mbox.dp2 {
@@ -132,9 +132,9 @@
     width: 50%;
 
 
-    @include breakpoint(tablet) {
-        padding-left: 5%;
-    }
+    // @include breakpoint(tablet) {
+    //     padding-left: 5%;
+    // }
 
     @include breakpoint(square, mobile, tiny) {
         width: 60%;

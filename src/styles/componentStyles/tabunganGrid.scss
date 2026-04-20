@@ -109,16 +109,23 @@
     gap: 1rem;
     width: 50%;
 
+    @include breakpoint(square, mobile, tiny) {
+        align-self: center;
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 10rem;
+    }
+
     .tbt {
         color: var(--accent);
         font-family: var(--display);
         font-weight: 1000;
-        font-size: 2rem;
+        font-size: 3rem;
         width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: row;
-        border: 2px dashed var(--accent);
+        //border: 2px dashed var(--accent);
         border-radius: var(--rounding);
         padding: 1rem;
     }
