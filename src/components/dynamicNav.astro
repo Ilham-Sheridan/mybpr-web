@@ -222,9 +222,9 @@ const { stayAwake, freeze } = Astro.props;
       function getOffsetTop(id: string): number {
         const el = document.getElementById(id);
         if (!el) {
-          console.log(
-            `[NAV CHPT] Scroll EVL off, not found ${id}. Caused a cascade, function is disabled.`,
-          );
+          // console.log(
+          //   `[NAV CHPT] Scroll EVL off, not found ${id}. Caused a cascade, function is disabled.`,
+          // );
           window.removeEventListener("scroll", chapter);
           return Infinity;
         }
@@ -282,18 +282,8 @@ const { stayAwake, freeze } = Astro.props;
     window.addEventListener("scroll", chapter);
   }
 
-  function initPreset() {
-    const currentPath = window.location.pathname;
-    if (currentPath.includes("gallery")) {
-      isGalleryPage = true;
-    } else {
-      isGalleryPage = false;
-    }
-    navLogic();
-  }
-
-  document.addEventListener("DOMContentLoaded", initPreset);
-  document.addEventListener("astro:after-swap", initPreset);
+  document.addEventListener("DOMContentLoaded", navLogic);
+  document.addEventListener("astro:after-swap", navLogic);
 </script>
 
 <style lang="scss">
@@ -378,7 +368,7 @@ const { stayAwake, freeze } = Astro.props;
       background 0.2s,
       color 0.2s,
       border 0.2s,
-      font-weight .2s;
+      font-weight 0.2s;
     font-weight: 500;
     padding: 0.3rem 1rem;
     cursor: pointer;

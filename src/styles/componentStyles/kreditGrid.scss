@@ -69,9 +69,11 @@
             @include breakpoint(tablet) {
                 width: 300%;
             }
+
             @include breakpoint(mobile) {
                 width: 130%;
             }
+
             @include breakpoint(tiny) {
                 width: 120%;
             }
@@ -235,6 +237,11 @@
             background: url(/mybpr-web/imgs/webp/sheared_bolt.webp) center/contain no-repeat;
             right: 0;
             transform: translateY(-5rem);
+
+            @include breakpoint(mobile, tiny) {
+                width: 200px;
+                transform: translate(1rem, -3rem);
+            }
         }
 
         &._3t5_clock {
@@ -242,6 +249,11 @@
             background: url(/mybpr-web/imgs/webp/stopwatche.webp) center/contain no-repeat;
             right: 0;
             transform: translate(0, 2rem);
+
+            @include breakpoint(mobile, tiny) {
+                width: 150px;
+                transform: translate(1rem, 2rem);
+            }
         }
     }
 
@@ -263,6 +275,7 @@
 
         & :nth-child(1) {
             margin-bottom: -1rem;
+
         }
 
         & :nth-child(2) {
@@ -270,6 +283,17 @@
             margin: -4rem 0;
             font-weight: 1000;
             font-family: var(--text);
+        }
+
+        @include breakpoint(mobile, tiny) {
+            font-size: 3em;
+            padding: 1rem 1rem;
+            text-shadow: 0 0 20px rgba(var(--baseRGB), .5);
+
+            & :nth-child(2) {
+                font-size: 3.5em;
+                margin: -3rem 0;
+            }
         }
     }
 
@@ -281,6 +305,20 @@
             background: url(/mybpr-web/imgs/webp/3M.webp) center/contain no-repeat;
             right: 0;
             transform: translate(1rem, 0);
+
+            @include breakpoint(square) {
+                width: 450px;
+                height: 400px;
+                bottom: 0;
+                transform: translate(1rem, 7rem);
+            }
+
+            @include breakpoint(mobile, tiny) {
+                width: 300px;
+                height: 300px;
+                bottom: 0;
+                transform: translate(1rem, 3rem);
+            }
         }
 
         &.plafond_textbox {
@@ -301,6 +339,18 @@
 
             & :nth-child(2) {
                 margin-bottom: -1rem;
+            }
+
+            @include breakpoint(mobile, tiny) {
+            padding: 1rem 1rem;
+
+                font-size: 2rem;
+                & :nth-child(1) {
+                    font-size: 4rem;
+                }
+                & :nth-child(2) {
+                    margin-bottom: -1rem;
+                }
             }
         }
     }

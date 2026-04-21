@@ -170,9 +170,9 @@ a {
     color: var(--linkVisited);
   }
 
-  &:hover {
-    color: var(--fore);
-  }
+  // &:hover {
+  //   color: var(--fore);
+  // }
 }
 
 hr {
@@ -201,10 +201,6 @@ hr {
 
 .b4 {
   font-weight: 400;
-}
-
-.socicon {
-  font-family: var(--display);
 }
 
 .material-symbols-rounded {
@@ -283,11 +279,13 @@ hr {
 .end {
   width: 90%;
   margin: 4em 0 2em 0;
+  border-color: var(--accent);
 }
 
 .footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 5%;
   padding-bottom: 1.5em;
 }
 
@@ -296,24 +294,36 @@ hr {
   flex-direction: column;
   align-items: center;
 }
+.flexbox2 {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: var(--accent);
+}
 
 .socials {
   display: flex;
   justify-content: center;
+  
 }
 
-.copyright {
+.copyright, .disc {
   font-family: var(--display), sans-serif;
   font-size: 0.8rem;
   margin-bottom: 0.2em;
-  color: var(--fore);
+  color: var(--accent);
+}
+
+.disc {
+  max-width: 50%;
+  margin-bottom: 2rem;
 }
 
 .tosPageLink {
   font-family: var(--content), sans-serif;
   font-weight: 700;
   font-size: 0.8rem;
-  text-align: center;
   margin-bottom: 0.5em;
 
   a {
@@ -333,25 +343,25 @@ hr {
   font-size: 0.8rem;
 }
 
-// .socicon {
-//   --size: 40px;
-//   width: var(--size);
-//   height: var(--size);
-//   margin: 0 0.2em;
-//   font-size: 32px;
-//   background: var(--fore);
-//   mask-position: center;
-//   mask-size: contain;
-//   mask-repeat: no-repeat;
+.socicon {
+  --size: 1.7em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: calc(var(--rounding) / 6);
+  margin: 0 0.2em;
+  font-size: var(--size);
+  color: var(--accent);
+  background: var(--base);
+  border: 2px dashed var(--accent);
 
-//   &.twt {
-//     mask-image: url('/socials/twt.svg');
-//   }
-
-//   &.bsky {
-//     mask-image: url('/socials/bsky.svg');
-//   }
-// }
+  &:hover {
+    background: var(--accent);
+    color: var(--base);
+  }
+}
 
 .interactive {
   cursor: pointer;

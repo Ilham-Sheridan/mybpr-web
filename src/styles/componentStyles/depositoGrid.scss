@@ -196,6 +196,10 @@
                 font-weight: 1000;
             }
         }
+
+        @include breakpoint(square, mobile, tiny) {
+            flex-direction: column;
+        }
     }
 
     .dpDuration {

@@ -3,6 +3,7 @@ import { ClientRouter, slide, fade } from "astro:transitions";
 import favico from "../assets/mybpr_fico.svg";
 import QuirkyLoad from "../components/utils/quirkyLoad.astro";
 import DynamicNav from "../components/dynamicNav.astro";
+import "../styles/getSocial/style.css"
 
 interface Props {
   url?: string;
@@ -25,29 +26,58 @@ const { thumb, url, title, description, navStayAwake, navFreeze } = Astro.props;
     <!-- OG -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={url ? url : "https://mybpr.com"} />
-    <meta property="og:title" content={title ? title : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"} />
-    <meta property="og:description" content={description ? description : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"} />
+    <meta
+      property="og:title"
+      content={title
+        ? title
+        : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"}
+    />
+    <meta
+      property="og:description"
+      content={description
+        ? description
+        : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"}
+    />
     <meta
       property="og:image"
-      content={thumb ? `${import.meta.env.SITE}${thumb}` : `${import.meta.env.SITE}/content/thumb/thumb.jpg`}
+      content={thumb
+        ? `${import.meta.env.SITE}${thumb}`
+        : `${import.meta.env.SITE}/content/thumb/thumb.jpg`}
     />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={url ? url : "https://mybpr.com"} />
-    <meta property="twitter:title" content={title ? title : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"} />
-    <meta property="twitter:description" content={description ? description : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"} />
+    <meta
+      property="twitter:title"
+      content={title
+        ? title
+        : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"}
+    />
+    <meta
+      property="twitter:description"
+      content={description
+        ? description
+        : "PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia"}
+    />
     <meta
       property="twitter:image"
-      content={thumb ? `${import.meta.env.SITE}${thumb}` : `${import.meta.env.SITE}/content/thumb/thumb.jpg`}
+      content={thumb
+        ? `${import.meta.env.SITE}${thumb}`
+        : `${import.meta.env.SITE}/content/thumb/thumb.jpg`}
     />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=call,check_circle,content_paste_search,forward_to_inbox,handshake,publish,send_money,share_location" />
-    <title>PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=call,check_circle,content_paste_search,forward_to_inbox,handshake,publish,send_money,share_location"
+    />
+    <title>
+      PT. BPR MULIA YUGANTA INDONESIA - PT. BPR Mulia Yuganta Indonesia
+    </title>
     <ClientRouter />
   </head>
   <body>
-    <DynamicNav stayAwake={navStayAwake} freeze={navFreeze}/>
+    <DynamicNav stayAwake={navStayAwake} freeze={navFreeze} />
     <QuirkyLoad />
 
     <div transition:animate={fade({ duration: ".5s" })}>
@@ -60,15 +90,23 @@ const { thumb, url, title, description, navStayAwake, navFreeze } = Astro.props;
     <div class="footer">
       <div class="flexbox1">
         <div class="socials">
-          <a href="https://bsky.app/profile/potto.bsky.social" target="_blank">
-            <div class="socicon bsky"></div>
+          <a href="https://www.facebook.com/BPR.DAL/?locale=id_ID" target="_blank">
+            <!-- <div class="socicon bsky"></div> -->
+            <i class="socicon gsicon-facebook"></i>
           </a>
-          <a href="https://twitter.com/Potto2292" target="_blank">
-            <div class="socicon twt"></div>
+          <a href="https://www.instagram.com/mybpr/" target="_blank">
+            <i class="socicon gsicon-instagram"></i>
           </a>
         </div>
+      </div>
+      <div class="flexbox2">
+        <p class="disc">
+          PT. BPR MULIA YUGANTA INDONESIA berizin dan diawasi oleh OJK <br /><br />
+          PT. BPR MULIA YUGANTA INDONESIA merupakan peserta penjaminan LPS, Maksimum nilai
+          simpanan yang dijamin LPS per nasabah per bank adalah Rp 2 miliar
+        </p>
         <span class="copyright">© 2026 By PT. BPR MULIA YUGANTA INDONESIA</span>
-        <a href="tos" class="tosPageLink"><span>Terms of Service</span></a>
+        <!-- <a href="tos" class="tosPageLink"><span>Terms of Service</span></a> -->
       </div>
     </div>
   </body>
