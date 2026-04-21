@@ -357,9 +357,12 @@ hr {
   background: var(--base);
   border: 2px dashed var(--accent);
 
+  transition: background .2s var(--sleek), color .2s var(--sleek), transform .1s var(--sleek);
+
   &:hover {
     background: var(--accent);
     color: var(--base);
+    transform: scale(1.1);
   }
 }
 
